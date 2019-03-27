@@ -17,5 +17,7 @@ def calculate_tile_size(long_side, short_side):
 
 
 # ---- MAIN PROGRAM ----
-tile_size = calculate_tile_size(345,150)
+room_length = int(input("Room length: "))
+room_width = int(input("Room width: "))
+tile_size = calculate_tile_size(room_length,room_width)
 print(tile_size)
