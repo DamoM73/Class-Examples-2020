@@ -1,8 +1,8 @@
 from tkinter import *
+
 # CONSTANTS
 WIDTH = 800
 HEIGHT = 600
-
 
 # FUNCTIONS
 # calcuate tile size
@@ -33,12 +33,16 @@ def floor_display(room_long, room_short, tile, floor_canvas):
         y1 = y1 + tile
         x1 = 0
 
-
-
-
 # display tile size
+def tile_info_text(room_long, room_short, tile, floor_canvas):
+    number_of_tiles_X = room_long // tile
+    number_of_tiles_Y = room_short // tile
+    number_of_tiles = number_of_tiles_X * number_of_tiles_Y
 
-
+    floor_canvas.create_text(WIDTH / 2, HEIGHT - 40, \
+        text="Your perfect tile has a side of "+ str(tile) +" cm.")
+    floor_canvas.create_text(WIDTH / 2, HEIGHT -20, \
+        text="You will need " + str(number_of_tiles) + " tiles.")
 
 # ---- MAIN PROGRAM ----
 # Initialise window
@@ -52,5 +56,6 @@ room_width = int(input("Room width: "))
 tile_size = calculate_tile_size(room_length,room_width)
 #print(tile_size)
 floor_display(room_length,room_width,tile_size,canvas)
+tile_info_text(room_length,room_width,tile_size,canvas)
 
 window.mainloop()
