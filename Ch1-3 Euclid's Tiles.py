@@ -1,13 +1,14 @@
 from tkinter import *
 
 # CONSTANTS
-WIDTH = 800
-HEIGHT = 600
+WIDTH = 800     # the canvas width
+HEIGHT = 600    # the canvas height
 
 # FUNCTIONS
 # calcuate tile size
 def calculate_tile_size(long_side, short_side):
-    remainder = long_side % short_side
+    # calculates the size of the side of the tile
+    remainder = long_side % short_side      # calucate remainder
     while remainder != 0:
         remainder = long_side % short_side
         long_side = short_side
