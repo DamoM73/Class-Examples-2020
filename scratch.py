@@ -1,4 +1,4 @@
-data = [19,10,8,17,9]
+names = ["Nick", "Dan", "Callum", "Dan", "Tom"]
 
-for i in range(6):
-    print("Good morning")
+for name in names:
+    print(name)
