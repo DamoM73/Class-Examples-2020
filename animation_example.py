@@ -6,8 +6,8 @@ WIDTH = 600
 HEIGHT = 400
 SIZE = 10
 
-speedx= randrange(-10,10)
-speedy= randrange(-10,10)
+#speedx= randrange(-10,10)
+#speedy= randrange(-10,10)
 
 # **** Functions ****
 def move_ball():
