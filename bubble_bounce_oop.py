@@ -87,11 +87,20 @@ def lmc_task(event):
 
 class Bubble:
     def __init__(self, event):
-        colour = random.choice(COLOURS)
-        canvas.create_oval(event.x-SIZE/2, event.y-SIZE/2, event.x+SIZE/2, event.y+SIZE/2, fill=colour)
-        #self.speedx = random.randrange(-10,10)
-        #self.speedy = random.randrange(-10,10)
+        self.colour = random.choice(COLOURS)
+        self.bubble = canvas.create_oval(event.x-SIZE/2, event.y-SIZE/2, event.x+SIZE/2, event.y+SIZE/2, fill=self.colour)
+        self.speedx = random.randrange(-10,10)
+        self.speedy = random.randrange(-10,10)
+        self.update_bubble()
 
+    def update_bubble(self):
+        canvas.move(self.bubble, self.speedx, self.speedy)
+        pos = canvas.coords(self.bubble)
+        if pos[1] <= 0 or pos[3] >= HEIGHT:
+            self.speedy *= -1
+        if pos[0] <= 0 or pos[2] >= WIDTH:
+            self.speedx *= -1
+        root.after(40, self.update_bubble)
 
 # **** Create Window ****
 root = Tk()
