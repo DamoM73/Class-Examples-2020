@@ -18,10 +18,11 @@ class Ball:
         main_canvas.move(self.ball,0,self.speed)
         pos = main_canvas.coords(self.ball)
         print(self.speed)
+        
         if pos[3] >= HEIGHT:
             if self.speed > 1:
                 print("bounce")
-                self.speed = (self.speed - 1) * -1
+                self.speed = (self.speed - 2) * -1
             elif self.speed == 1:
                 self.speed = 0
 
